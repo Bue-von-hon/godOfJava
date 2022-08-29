@@ -14,10 +14,10 @@ public class Client {
             while (true) {
                 Scanner sc = new Scanner(System.in);
                 String s = sc.nextLine();
-                if ("q".equals(s)) break;
                 dos.writeBytes(s);
                 dos.writeBytes("\n");
                 out.flush();
+                if ("q".equals(s)) break;
             }
         }
         catch (Exception e) {

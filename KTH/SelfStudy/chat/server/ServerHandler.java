@@ -12,7 +12,10 @@ public class ServerHandler extends Thread{
             BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"));
             while (true) {
                 String s = br.readLine();
-                if (s.isEmpty()) break;
+                if ("q".equals(s)) {
+                    System.out.println(socket.getPort()+" "+socket.getLocalPort()+" "+socket.getLocalAddress()+" "+socket.getLocalSocketAddress()+" req to close");
+                    break;
+                }
                 System.out.println(socket.getPort()+" "+socket.getLocalPort()+" "+socket.getLocalAddress()+" "+socket.getLocalSocketAddress()+" "+s);
             };
         }
